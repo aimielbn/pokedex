@@ -22,8 +22,8 @@ export default defineNuxtConfig({
       theme: {
         extend: {
           fontFamily: {
-            sans: ["Oswald", ...defaultTheme.fontFamily.sans],
-            serif: ["Libre Baskerville", ...defaultTheme.fontFamily.serif],
+            sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+            serif: ["Titan One", ...defaultTheme.fontFamily.serif],
           },
         },
       },

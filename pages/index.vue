@@ -35,7 +35,7 @@ pokemons.value = data.value.pokemons;
     <li v-for="pokemon in pokemons" :key="pokemon.id">
       <NuxtLink :to="`/pokemon/${pokemon.slug}`">
         <NuxtImg :src="pokemon.image.url" :alt="pokemon.nom" />
-        <h2 class="text-3xl text-center">{{ pokemon.nom }}</h2>
+        <h2 class="text-2xl text-center font-serif">{{ pokemon.nom }}</h2>
       </NuxtLink>
     </li>
   </ul>

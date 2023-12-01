@@ -37,7 +37,7 @@
         <h1 class="text-5xl font-serif">Pokédex</h1>
       </NuxtLink>
     </nav>
-    <div class="container mx-auto px-3">
+    <div class="container mx-auto px-5">
       <slot />
     </div>
   </div>

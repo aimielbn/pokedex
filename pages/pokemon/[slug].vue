@@ -4,6 +4,7 @@ const query = gql`
     pokemon(where: { slug: $slug }) {
       id
       nom
+      pv
       slug
       description
       createdAt
@@ -63,8 +64,12 @@ pokemon.value = data.value.pokemon;
 
   <div v-if="pokemon" class="max-w-lg space-y-8 mx-auto">
     <NuxtImg class="" :src="pokemon.image.url" :alt="pokemon.nom" />
-    <h2 class="text-3xl text-center">{{ pokemon.nom }}</h2>
-    <p class="text-justify text-red-950">{{ pokemon.description }}</p>
+    <h2 class="text-2xl text-center font-serif">{{ pokemon.nom }}</h2>
+    <div class="flex font-bold">
+      <label>Pv </label>
+      <p class="text-green-950 pl-2">{{ pokemon.pv }}</p>
+    </div>
+    <p class="text-justify text-green-950">{{ pokemon.description }}</p>
   </div>
   <div v-else>
     <li>Loading...</li>
