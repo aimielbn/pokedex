@@ -32,7 +32,11 @@ pokemons.value = data.value.pokemons;
     v-if="pokemons"
     class="grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6"
   >
-    <li v-for="pokemon in pokemons" :key="pokemon.id">
+    <li
+      v-for="pokemon in pokemons"
+      :key="pokemon.id"
+      class="border-4 border-green-500 rounded-lg bg-white"
+    >
       <NuxtLink :to="`/pokemon/${pokemon.slug}`">
         <NuxtImg :src="pokemon.image.url" :alt="pokemon.nom" />
         <h2 class="text-2xl text-center font-serif">{{ pokemon.nom }}</h2>
