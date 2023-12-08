@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  css: ["assets/font.css"],
+  css: ["assets/font.css","@fortawesome/fontawesome-free/css/all.css"],
   tailwindcss: {
     config: {
       theme: {

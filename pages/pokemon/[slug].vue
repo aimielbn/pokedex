@@ -5,6 +5,8 @@ const query = gql`
       id
       nom
       pv
+      taille
+      poids
       slug
       description
       createdAt
@@ -12,12 +14,7 @@ const query = gql`
       updatedAt
       stage
       image {
-        url(
-          transformation: {
-            image: { resize: { fit: crop, height: 1024, width: 1024 } }
-            document: { output: { format: webp } }
-          }
-        )
+        url
       }
       typePokemon {
         nom
@@ -82,13 +79,20 @@ pokemon.value = data.value.pokemon;
         alt="pokemon.typePokemon.nom"
       />
     </h2>
-    <div class="flex font-bold">
-      <label>Pv </label>
-      <p class="text-green-950 pl-2">{{ pokemon.pv }}</p>
+    <div class="flex font-bold grid gap-8 grid-cols-3">
+      <p class="text-green-950 pl-2"><label>Pv </label>{{ pokemon.pv }}</p>
+    
+      <p class="text-green-950 pl-2">
+        <i class="fa-solid fa-up-long mr-2"></i>{{ pokemon.taille }}cm
+      </p>
+      <p class="text-green-950 pl-2">
+        <i class="fa-solid fa-scale-balanced mr-2"></i>{{ pokemon.poids }}kg
+      </p>
     </div>
+
     <p class="text-justify pb-10 text-green-950">{{ pokemon.description }}</p>
   </div>
   <div v-else>
-    <li>Loading...</li>
+    <p><i class="fa-solid fa-spinner animate-spin mr-2"></i>Loading...</p>
   </div>
 </template>
