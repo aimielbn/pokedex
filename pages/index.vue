@@ -1,7 +1,7 @@
 <script setup>
 const query = gql`
   query Pokemons {
-    pokemons(orderBy: id_ASC) {
+    pokemons(orderBy: id_ASC, first: 50) {
       createdAt
       description
       id
@@ -35,7 +35,7 @@ pokemons.value = data.value.pokemons;
     <li
       v-for="pokemon in pokemons"
       :key="pokemon.id"
-      class="border-4 border-green-500 rounded-lg bg-white"
+      class="flex flex-col items-center border-4 border-green-500 rounded-lg bg-white w-fit"
     >
       <NuxtLink :to="`/pokemon/${pokemon.slug}`">
         <NuxtImg :src="pokemon.image.url" :alt="pokemon.nom" />

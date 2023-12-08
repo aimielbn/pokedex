@@ -71,17 +71,21 @@ pokemon.value = data.value.pokemon;
 
   <div v-if="pokemon" class="max-w-lg space-y-8 mx-auto">
     <NuxtImg class="" :src="pokemon.image.url" :alt="pokemon.nom" />
+    <div class="">
     <h2 class="text-2xl text-center font-serif space-x-4">
-      {{ pokemon.nom }}
+      {{ pokemon.nom }} 
       <img
-        class="h-10 w-10 mt-2"
+        class="h-10 w-10"
         :src="pokemon.typePokemon.image.url"
         alt="pokemon.typePokemon.nom"
       />
     </h2>
+    </div>
     <div class="flex font-bold grid gap-8 grid-cols-3">
-      <p class="text-green-950 pl-2"><label>Pv </label>{{ pokemon.pv }}</p>
-    
+      <p class="text-green-950 pl-2">
+        <label class="mr-2">Pv</label>{{ pokemon.pv }}
+      </p>
+
       <p class="text-green-950 pl-2">
         <i class="fa-solid fa-up-long mr-2"></i>{{ pokemon.taille }}cm
       </p>
